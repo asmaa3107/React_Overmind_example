@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import { useActions, useAppState } from "./overmind";
+import { university } from './overmind/University/state'
 
 function App() {
   const { unis, isLoadingPosts } = useAppState();
   const { getAllAction } = useActions();
 
   useEffect(() => {
-    getAllAction().then((data) => {
+    getAllAction().then((data :university) => {
       if (data) {
           console.log('done!');
       }
