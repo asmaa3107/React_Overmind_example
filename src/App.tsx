@@ -17,6 +17,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h3>posts</h3>
+        <div></div>
         <h3>USA UNIVERSITY</h3>
         <div>
           {isLoadingPosts ? (
