@@ -4,11 +4,11 @@ import { useActions, useAppState } from "./overmind";
 import { university } from './overmind/University/state'
 
 function App() {
-  const { unis, isLoadingPosts } = useAppState();
-  const { getAllAction } = useActions();
+  const { uins } = useAppState();
+  const { getAllAction } = useActions().uins;
 
   useEffect(() => {
-    getAllAction().then((data :university) => {
+    getAllAction().then((data) => {
       if (data) {
           console.log('done!');
       }
@@ -22,12 +22,12 @@ function App() {
         <div></div>
         <h3>USA UNIVERSITY</h3>
         <div>
-          {isLoadingPosts ? (
+          {uins.isLoadingPosts ? (
             "loading .... "
           ) : (
             <div>
               <ul>
-                {unis.map((item, index) => (
+                {uins.unis.map((item, index) => (
                   <li key={index}>{item.name}</li>
                 ))}
               </ul>
