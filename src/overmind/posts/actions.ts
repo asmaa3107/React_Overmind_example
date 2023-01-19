@@ -1,6 +1,6 @@
 import { Context } from "../index";
 
-export const getAllAction = async (context: Context) => {
+export const getAllPostsAction = async (context: Context) => {
   try {
     context.state.posts.isLoading = true;
     const result = await context.effects.posts.httpApi.getAll();
